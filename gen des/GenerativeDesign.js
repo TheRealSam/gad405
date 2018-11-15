@@ -5,7 +5,7 @@ let size1 = 30;
 
 function setup() {
   createCanvas(1000, 1000);
-  frameRate(60)
+  frameRate(60);
 }
 
 function draw() {
