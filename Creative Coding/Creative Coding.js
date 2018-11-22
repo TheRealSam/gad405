@@ -10,11 +10,12 @@ function setup() {
 
 function draw() {
   if(mouseIsPressed) {
-    variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
+    circle(mouseX, mouseY, pmouseX, pmouseY);
+    circle(mouseX/2, mouseY, pmouseX/2, pmouseY);
   }
 }
 function keyPressed() {
-  if(keyCode === LEFT_ARROW) {
+  if(key == " ") {
     clear();
     r = random(255);
     g = random(255);
@@ -23,12 +24,19 @@ function keyPressed() {
   }
 }
 
-function variableEllipse(x, y, px, py) {
-  var speed = abs(x-px) + abs(y-py);
-  stroke(10);
+function circle(x, y, px, py) {
+  var distance = abs(x-px) + abs(y-py);
+  stroke(r, g, b);
+  strokeWeight(2);
   r = random(255);
   g = random(255);
   b = random(255);
+
+  r2 = random(255);
+  g2 = random(255);
+  b2 = random(255);
   fill(r, g, b);
-  ellipse(x, y, speed, speed);
+  ellipse(x, y, distance, distance);
+  fill(r2, g2, b2);
+  ellipse(x, y, distance/2, distance/2);
 }
